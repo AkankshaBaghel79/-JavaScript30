@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Tools</title>
+</head>
+<body>
+    <p onclick="makeGreen()">xBREAKxDOWNx</p>
+
+    <script>
+        const dogs = [
+            {name: 'Snickers', age: 2},
+            {name: 'hugo',age: 8}
+        ];
+
+        function makeGreen(){
+            const p = document.querySelector('p');
+            p.style.color = '#BADA55';
+            p.style.fontSize = '50px';
+        }
+
+        // Regular
+        
+        console.log('hello how are you');
+
+        // Interpolated
+
+        console.log('what going on dude..%s not that much','😷');
+
+        // Styled
+
+        console.log('%c yahooooooo','font-size: 20px; background: black; tex-shadow: 2px 2px 0 yellow')
+
+        // warning!
+
+        console.warn('ohhh goddd!!');
+
+        // Error :
+
+        console.error('F****U');
+
+        // Info
+
+        console.info('Javascript is the most misunderstood programming language');
+
+        // Testing
+
+        const p = document.querySelector('p');
+        console.assert(5==1,'nope that is not true');
+
+        // clearing
+
+        console.clear();
+
+        // Viewing DOM Elements
+
+        console.log(p);
+        console.dir(p);
+
+        console.clear();
+        // Grouping together
+
+        dogs.forEach(dog=>{
+            console.groupCollapsed(`${dog.name}`)
+            console.log(`I Love ${dog.name} he is so cute`);
+            console.log(`${dog.name} is ${dog.age} years old`);
+            console.groupEnd(`${dog.name}`);
+        });
+
+        console.table(dogs);
+
+        // counting
+
+        console.count('yahoo');
+        console.count('yahoo');
+        console.count('Nope');
+        console.count('yahoo');
+        console.count('Nope');
+
+        // timing
+
+        console.time('fetching data');
+        fetch('http://example.com/movies.json')
+           .then(data =>data.json())
+           .then(data=>{
+               console.timeEnd('fectching data');
+           })
+
+
+    </script>
+</body>
+</html>
